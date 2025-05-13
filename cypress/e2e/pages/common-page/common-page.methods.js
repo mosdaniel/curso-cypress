@@ -28,4 +28,9 @@ export class CommonPageMethods{
     static clickOnSingUpOption(){
         CommonPageElements.topMenu.signUp.click();
     }
+    static verifyAlert(expectedmessage){
+        cy.on('window:alert',(str)=>{
+            expect(str).to.equal(expectedmessage)
+        })
+    }
 }

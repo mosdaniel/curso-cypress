@@ -1,12 +1,14 @@
+import { use } from "react";
+import { CommonPageMethods } from "../common-page/common-page.methods";
 import { SignupElements } from "./singup.elements";
 
 export class SignupMethods{
 
     static insertUsername(username){
-        SignupElements.textboxes.username.invoke("val",username)
+        SignupElements.texBoxes.username.invoke("val",username)
     }
     static insertPassword(password){
-        SignupElements.textboxes.password.invoke("val",password)
+        SignupElements.texBoxes.password.invoke("val",password)
     }
 
     static clickOnSignupButton(){
@@ -18,5 +20,11 @@ export class SignupMethods{
         this.insertPassword(password)
         this.clickOnSignupButton()
     }
+     static verifySignupSuccessfulMessageDisplayed(){
+        CommonPageMethods.verifyAlert("Sign up successful.")
+    };
+
+
+
 
 }

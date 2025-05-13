@@ -6,7 +6,7 @@ export class SignupElements{
                 return cy.get("input#sign-username")
 
             },
-            get username(){
+            get password(){
 
                 return cy.get("input#sign-password")
 
