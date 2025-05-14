@@ -21,6 +21,7 @@ describe(CommonPageData.testSuites.registroYAutenticacion, ()=>{
     Logger.stepNumber(4)
     Logger.step("hacer click en sign up para registrar el usuario")
     SignupMethods.clickOnSignupButton();
+    cy.wait(1000)
     Logger.verification("verificar que se muestre el mensaje de sign up successful");
     SignupMethods.verifySignupSuccessfulMessageDisplayed()
 
