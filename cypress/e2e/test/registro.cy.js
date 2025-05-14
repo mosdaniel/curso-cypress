@@ -1,10 +1,11 @@
 import { CommonPageData } from "../pages/common-page/common-page.data";
 import { CommonPageMethods } from "../pages/common-page/common-page.methods";
+import { loginData } from "../pages/login/login.data";
 import { SignupMethods } from "../pages/singup/singup.methods";
 import { Logger } from "../util/logger";
 const user = CommonPageMethods.makestring();
 const pass = CommonPageMethods.makestring(7)
-const existinguser = "random01"
+const existinguser = loginData.validCredentials.usermame
 
 
 describe(CommonPageData.testSuites.registro, ()=>{
@@ -31,7 +32,7 @@ describe(CommonPageData.testSuites.registro, ()=>{
     Logger.verification("verificar que se muestre el mensaje de sign up successful");
     SignupMethods.verifySignupSuccessfulMessageDisplayed()
 
-    cy.wait(10000)
+    cy.wait(3000)
   
 
     });
@@ -59,7 +60,7 @@ describe(CommonPageData.testSuites.registro, ()=>{
     Logger.verification("verificar que se muestre el mensaje error de sign up");
     SignupMethods.verifyThatThisUserAlreadyExistMessageIsDisplayed()
 
-    cy.wait(10000)
+    cy.wait(3000)
   
 
     });

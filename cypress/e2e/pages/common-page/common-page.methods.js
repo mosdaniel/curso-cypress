@@ -51,6 +51,10 @@ export class CommonPageMethods{
 
     }
 
+     static verifySignedUser(usermame){
+        CommonPageElements.signedUser.should("have.text",`Welcome ${usermame}`)
+
+    }
 
 
 }
