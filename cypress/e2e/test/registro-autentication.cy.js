@@ -28,7 +28,7 @@ describe(CommonPageData.testSuites.registroYAutenticacion, ()=>{
     Logger.verification("verificar que se muestre el mensaje de sign up successful");
     SignupMethods.verifySignupSuccessfulMessageDisplayed()
 
-    
+    cy.wait(10000)
   
 
     });

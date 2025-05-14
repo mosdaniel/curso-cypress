@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "generar-reporte": "npx allure generate \"allure-results\" -o \"allure-report\" --clean",
+"generar-reporte": "cmd /c \"npx allure generate allure-results -o allure-report --clean\"",
 "abrir-reporte": "npx allure open \"allure-report\"",
     "ejecutar-pruebas": "cypress run --headed --env allure=true",
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",

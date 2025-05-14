@@ -35,7 +35,7 @@ export class CommonPageMethods{
         })
     }
 
-    static makestring(legth = 10) {
+    static makestring(length = 10) {
         let result = ""
         const caracteres = "abcdefghijklmnopqrsrtuwxyz0123456789";
         const caractereslength = caracteres.length;
