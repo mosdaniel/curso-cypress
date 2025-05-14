@@ -34,4 +34,23 @@ export class CommonPageMethods{
             expect(str).to.equal(expectedmessage)
         })
     }
+
+    static makestring(legth = 10) {
+        let result = ""
+        const caracteres = "abcdefghijklmnopqrsrtuwxyz0123456789";
+        const caractereslength = caracteres.length;
+        let counter =0
+        while (counter < length){
+            result += caracteres.charAt(Math.floor(Math.random()*caractereslength));
+            counter += 1;
+        }
+        return result;
+
+
+
+
+    }
+
+
+
 }
