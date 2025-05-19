@@ -167,7 +167,8 @@ describe(CommonPageData.testSuites.catalogoYCompras,()=>{
         ThankUForUrPurchaseMethods.verifyGreenCheckMarkIsDisplayed();
         ThankUForUrPurchaseMethods.clickOnOkButton()
         HomeMethods.verifyHomePageIsShown()
-         cy.wait(10000)
+         
+        cy.wait(10000)
         
     }) 
 
