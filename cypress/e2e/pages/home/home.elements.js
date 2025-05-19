@@ -18,4 +18,8 @@ export class HomeElements{
          static product(product_name){
             return cy.contains("a",product_name)
         }
+
+
+
+      
 }

@@ -6,5 +6,7 @@ export class CartMethods{
         CartElement.links.delete(product_name).click();
     }
 
-
+    static verifyProductAdded(product_name){
+        CartElement.links.delete(product_name).should("be.visible")
+    }
 }
