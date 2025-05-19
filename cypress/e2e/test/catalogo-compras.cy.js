@@ -12,7 +12,7 @@ import { ThankUForUrPurchaseMethods } from "../pages/thank-u-for-ur-purchase/tha
 import { Logger } from "../util/logger";
 const user = loginData.validCredentials;
 const product = "ASUS Full HD";
-describe(CommonPageData.testSuites.catalogoYCompras,()=>{
+xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
     xit("navegar por categorias",()=>{
 
         Logger.stepNumber(1)

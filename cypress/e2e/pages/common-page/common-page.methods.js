@@ -55,6 +55,16 @@ export class CommonPageMethods{
      static verifySignedUser(usermame){
         CommonPageElements.signedUser.should("have.text",`Welcome ${usermame}`)
     }
+    static logout(){
+        
+        cy.get("body").then($body=>{
+            if($body.find("#logout2").length>0){
+                        CommonPageElements.topMenu.logout.click()
+            }
+
+        })
+
+    }
  
 
 }

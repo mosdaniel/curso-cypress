@@ -18,6 +18,9 @@ export class CommonPageElements{
             },
             get logIn(){
                 return cy.contains("a","Log in")
+            },
+            get logout(){
+                return cy.get("#logout2")
             }
         }
     }

@@ -21,11 +21,15 @@ export class Logger{
         cy.allure().step(text)
     }
     static subVerificacion(description){
-        const text = "step - " + description
+        const text = "subverification - " + description
         cy.log(text)
         cy.allure().step(text)
     }
-
+    static postCondition(description){
+        const text = "Post condition - " + description
+        cy.log(text)
+        cy.allure().step(text)
+    }
 
 }
 
