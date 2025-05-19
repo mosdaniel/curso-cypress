@@ -1,6 +1,6 @@
 export class PlaceOrderData{
 
-   static get testDate(){
+   static get testData(){
         return{
         name:"Test name",
         country:"united states",

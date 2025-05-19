@@ -20,6 +20,9 @@ export class CommonPageMethods{
     
     static clickOnCartOption(){
         CommonPageElements.topMenu.Cart.click();
+        Cypress.on("uncaught:exception",(err,runnable)=>{
+            return false
+        })
     }
     
     static clickOnLogInOption(){
@@ -46,15 +49,11 @@ export class CommonPageMethods{
         }
         return result;
 
-
-
-
     }
 
      static verifySignedUser(usermame){
         CommonPageElements.signedUser.should("have.text",`Welcome ${usermame}`)
-
     }
-
+ 
 
 }

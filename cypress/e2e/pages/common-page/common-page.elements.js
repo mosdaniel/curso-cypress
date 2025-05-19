@@ -11,7 +11,7 @@ export class CommonPageElements{
                 return cy.contains("a","About us")
             },
             get Cart(){
-                return cy.contains("a","Cart")
+                return cy.contains('a', 'Cart')
             },
             get signUp(){
                 return cy.contains("a","Sign up")
@@ -21,6 +21,8 @@ export class CommonPageElements{
             }
         }
     }
+
+
 
     static get signedUser(){
         return cy.get('a#nameofuser')

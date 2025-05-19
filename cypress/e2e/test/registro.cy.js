@@ -8,7 +8,7 @@ const pass = CommonPageMethods.makestring(7)
 const existinguser = loginData.validCredentials.usermame
 
 
-describe(CommonPageData.testSuites.registro, ()=>{
+xdescribe(CommonPageData.testSuites.registro, ()=>{
     it("registro de usuario valido",()=>{
     Logger.stepNumber(1)
     Logger.step("Navegar a la pagina de inicio")

@@ -20,6 +20,14 @@ export class PlaceOrderMethods{
           static insertYear(year){
         PlaceOrderElements.textboxes.year.invoke("val",year)
     }
+    static insertOrderInformation(data){
+        this.insertName(data.name)
+        this.insertCountry(data.country)
+        this.insertCity(data.city)
+        this.insertCard(data.card)
+        this.insertMonth(data.month)
+        this.insertYear(data.year)
+    }
  
     static clickOnCloseButton(){
         PlaceOrderElements.buttons.close.click();
