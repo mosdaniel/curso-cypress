@@ -6,6 +6,7 @@ export class CommonPageMethods{
         cy.clearAllCookies();
         cy.clearLocalStorage();
         cy.visit(CommonPageData.url);
+        CommonPageMethods.clickOnHomeOption();
     }
     static clickOnHomeOption(){
         CommonPageElements.topMenu.home.click();
@@ -56,9 +57,9 @@ export class CommonPageMethods{
         CommonPageElements.signedUser.should("have.text",`Welcome ${usermame}`)
     }
     static logout(){
-        
+
         cy.get("body").then($body=>{
-            if($body.find("#logout2").length>0){
+            if($body.find(`#logout2[style="display: block;"]`).length>0){
                         CommonPageElements.topMenu.logout.click()
             }
 

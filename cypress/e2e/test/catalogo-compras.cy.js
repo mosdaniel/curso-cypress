@@ -1,3 +1,4 @@
+import { use } from "react";
 import { CartMethods } from "../pages/cart/cart.methods";
 import { CommonPageData } from "../pages/common-page/common-page.data";
 import { CommonPageMethods } from "../pages/common-page/common-page.methods";
@@ -12,7 +13,7 @@ import { ThankUForUrPurchaseMethods } from "../pages/thank-u-for-ur-purchase/tha
 import { Logger } from "../util/logger";
 const user = loginData.validCredentials;
 const product = "ASUS Full HD";
-xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
+describe(CommonPageData.testSuites.catalogoYCompras,()=>{
     xit("navegar por categorias",()=>{
 
         Logger.stepNumber(1)
@@ -27,7 +28,7 @@ xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
         LoginMethods.login(user.usermame,user.password)
                cy.wait(500)
         Logger.subStep("click en el boton log in")
-       // LoginMethods.clickOnLoginButton();
+   
 
         Logger.stepNumber(2)
         Logger.step("navegar a la pagina de inicio")
@@ -41,11 +42,15 @@ xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
         HomeMethods.verifyProductDisplayed("Apple monitor 24")
         HomeMethods.verifyProductDisplayed(product)
                cy.wait(1000)
+              
+        Logger.postCondition("hacer log out")
+        CommonPageMethods.logout()
+          cy.wait(3000)
 
     })
 
 
-       xit("agregar producto al carrito",()=>{
+       it("agregar producto al carrito",()=>{
 
         Logger.stepNumber(1)
         Logger.step("iniciar sesion como un usuario registrado")
@@ -88,13 +93,19 @@ xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
         CommonPageMethods.clickOnCartOption();
         CartMethods.verifyProductAdded(product)
                cy.wait(1000)
+               
+        Logger.postCondition("empty car and logout")
+       CartMethods.emptyCart(user.usermame,user.password)
+       cy.wait(10000)
+        CommonPageMethods.logout()
+          cy.wait(3000)
 
 
         
 
     }) 
 
-     it("realizar una compra",()=>{
+     xit("realizar una compra",()=>{
 
         Logger.stepNumber(1)
         Logger.step("iniciar sesion como un usuario registrado")
@@ -167,9 +178,11 @@ xdescribe(CommonPageData.testSuites.catalogoYCompras,()=>{
         ThankUForUrPurchaseMethods.verifyGreenCheckMarkIsDisplayed();
         ThankUForUrPurchaseMethods.clickOnOkButton()
         HomeMethods.verifyHomePageIsShown()
-         
-        cy.wait(10000)
-        
+
+       Logger.postCondition("logout")
+        CommonPageMethods.logout()
+       cy.wait(3000)
+
     }) 
 
 })

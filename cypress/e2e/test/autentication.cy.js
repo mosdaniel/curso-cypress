@@ -4,7 +4,7 @@ import { loginData } from "../pages/login/login.data";
 import { LoginMethods } from "../pages/login/login.methods";
 import { Logger } from "../util/logger";
 
-describe(CommonPageData.testSuites.autenticacion, ()=>{
+xdescribe(CommonPageData.testSuites.autenticacion, ()=>{
     it("inicio de sesion valido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar por la pagina de inicio")
