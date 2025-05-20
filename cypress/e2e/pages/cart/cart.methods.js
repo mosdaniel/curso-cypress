@@ -34,11 +34,12 @@ static emptyCart(username,password){
 
 }
 static deleteProducts(){
+    cy.intercept("POST","https://api.demoblaze.com/deleteitem").as("deleteItem")
     cy.get(`a[onclick*="deleteItem"]`).each(link=>{
 
         link.click()
 
-        cy.wait(1000)
+        cy.wait("@deleteItem")
     })
 
 

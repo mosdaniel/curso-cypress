@@ -11,7 +11,7 @@ export class CommonPageMethods{
     static clickOnHomeOption(){
         CommonPageElements.topMenu.home.click();
     }
-
+ 
     static clickOnContactOption(){
         CommonPageElements.topMenu.contact.click();
     }
